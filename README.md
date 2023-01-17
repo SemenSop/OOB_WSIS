@@ -44,8 +44,8 @@ names:
 3. Launch file transcam_instance_v4_ok.ipynb to obtain pseudo-instance masks and write it in YOLO annotation format. Annotations will be written in the 'labels' folder.
 
 ## YOLOv8 traininп
-1. Launch file .ipynb to divide train dataset into train and val parts
-2. Launch file .ipynb to train YOLOv8 network on the pseudo-instance masks from train dataset and obtain inference for val and test dataset. YOLOv8 and required files will be downloaded during code execution:
+1. Launch file yolov8.ipynb to divide train dataset into train and val parts
+2. Launch file val_test.ipynb to train YOLOv8 network on the pseudo-instance masks from train dataset and obtain inference for val and test dataset. YOLOv8 and required files will be downloaded during code execution:
   - WORK_DIR
     - Conformer_small_patch16.pth
     - wheat/
