@@ -1,0 +1,11 @@
+# train and val data
+train: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/train'
+val: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/val'
+test: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/test'
+
+# number of classes
+nc: 1
+
+# class names
+names:
+    0: wheat
