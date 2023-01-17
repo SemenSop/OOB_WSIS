@@ -23,12 +23,11 @@ train: images/train/
 val: images/val/
 
 # number of classes
-nc: 2
+nc: 1
 
 # class names
 names:
     0: wheat
-    1: background
 ```
 
 ## TransCAM
