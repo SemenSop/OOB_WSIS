@@ -1,7 +1,7 @@
 # train and val data
-train: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/train'
-val: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/val'
-test: '/content/drive/MyDrive/Colab Notebooks/WSSS/wheat/images/test'
+train: ''
+val: ''
+test: '/kaggle/input/global-wheat-detection/test'
 
 # number of classes
 nc: 1
