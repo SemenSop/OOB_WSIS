@@ -120,3 +120,4 @@ names:
 6. After code execution the results can be found in the
   - WORK_DIR
     - ultralytics/ultralytics/runs/segment/prediction
+   Every new prediction writing in the folder with number related to the number of execution: prediction, prediction2, prediction3 and etc. So, change the path to the weight after every training: `runs/segment/train/weights/best.pt`, `runs/segment/train2/weights/best.pt`, `runs/segment/train3/weights/best.pt`and etc.
