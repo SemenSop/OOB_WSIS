@@ -2,7 +2,6 @@
 ## DATASET DOWNLOAD AND PREPARATION
 1. Download dataset from 
 2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data 
-3. `pydensecrf`
 4. After execution `EXP_dataset_v2.ipynb` in the current directory will be create following folders
    - dataset/
      - images/
