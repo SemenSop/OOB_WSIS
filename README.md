@@ -48,25 +48,31 @@
           - test annotations in json format
         - train/
           - train annotations in json format
+***
 
 ## TransCAM training
 1. Download Conformer-S weights from here https://github.com/pengzhiliang/Conformer and put it to your WORK_DIR:
   - WORK_DIR/
     - Conformer_small_patch16.pth
-    - wheat/
-2. Launch file extract_full_masks.ipynb to extract plant parts and full plants annotations for TransCAM
+    - dataset_yolo/
+    - dataset_exp_2/
+    - dataet
+2. Launch file extract_full_masks.ipynb to extract plant parts and full plants annotations for TransCAM into box_part_train.csv and box_full_train.csv files correspondingly.
 3. Launch file transcam_train.ipynb to train WSSS network for the plant parts segmentation task and obtain weights or download it from this repositry (WEIGHT NAME). 
 4. Launch file transcam_full_train.ipynb to train WSSS network for the full plants segmentation task and obtain weights or download it from this repositry (WEIGHT NAME).
+***
 
 ## YOLOv8 training
-1. Launch file transcam_wheat_train.ipynb to train WSSS network and obtain weights or download it from this repositry (WEIGHT NAME). TransCAM and required files will be downloaded during code execution:
+1. It is requried to generate annotations in the YOLOv8 format. There are presented to files:
+   1) transcam_instance.ipynb - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the dataset_yolo/labels/...
+   2) EXP_v2_transcam_instance.ipynb - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the dataset_exp_2/labels/...
   - WORK_DIR
     - Conformer_small_patch16.pth
-    - wheat/
-    - transcam/
-7. Launch file transcam_instance_v4_ok.ipynb to obtain pseudo-instance masks and write it in YOLO annotation format. Annotations will be written in the 'labels' folder.
+    - dataset_yolo/
+    - dataset_exp_2/
+    - dataet
 
-3. 'data.yaml' for the plants part segmentation must be written in the following way:
+2. Create file 'data.yaml' for the plant parts in the folder dataset_yolo/. File must be written in the following way:
 ```
 # train and val data
 train: '/path/to/train/images'
@@ -86,7 +92,7 @@ names:
     6: other
 ```
 
-4. 'data.yaml' for the full plant segmentation must be written in the following way:
+4. Create file 'data.yaml' for the full plant in the folder dataset_exp_2/. File must be written in the following way:
 ```
 # train and val data
 train: '/path/to/train/images'
@@ -106,13 +112,9 @@ names:
     6: Wild Edible Plants
     7: flower_classification
 ```
-
-1. Launch file yolov8.ipynb to divide train dataset into train and val parts
-2. Launch file val_test.ipynb to train YOLOv8 network on the pseudo-instance masks from train dataset and obtain inference for val and test dataset. YOLOv8 and required files will be downloaded during code execution:
+5. Launch file yolov8.ipynb and choose the desired type of semgentation: plant parts or full plants
+6. After code execution the results can be found in the
   - WORK_DIR
-    - Conformer_small_patch16.pth
-    - wheat/
-    - transcam/ 
-    - ultralytics/
-3. Validation and test inference locate in the folder /ultralytics/runs/segment/
+    - ultralytics/ultralytics/runs/segment/prediction
+
 
