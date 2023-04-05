@@ -116,5 +116,3 @@ names:
 6. After code execution the results can be found in the
   - WORK_DIR
     - ultralytics/ultralytics/runs/segment/prediction
-
-
