@@ -1,7 +1,7 @@
 # Instructions
 ## DATASET DOWNLOAD AND PREPARATION
-1. Download dataset from 
-2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data 
+1. Download dataset from [here](https://github.com/nesterus/multipart_image_augmentation.git)
+2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data into folders
 4. After execution `EXP_dataset_v2.ipynb` in the current directory will be create following folders
    - dataset/
      - images/
