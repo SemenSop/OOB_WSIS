@@ -1,8 +1,8 @@
 # Instructions
 ## DATASET DOWNLOAD AND PREPARATION
 1. Download dataset from 
-2. Launch file 'EXP_dataset_v2.ipynb' to extract all of the data 
-3. After execution 'EXP_dataset_v2.ipynb' in the current directory will be create following folders
+2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data 
+3. After execution `EXP_dataset_v2.ipynb` in the current directory will be create following folders
    - dataset/
      - images/
         - test/
@@ -57,26 +57,26 @@
     - dataset_yolo/
     - dataset_exp_2/
     - dataet
-2. Launch file 'extract_full_masks.ipynb' to extract plant parts and full plants annotations for TransCAM into box_part_train.csv and box_full_train.csv files correspondingly.
+2. Launch file `extract_full_masks.ipynb` to extract plant parts and full plants annotations for TransCAM into `box_part_train.csv` and `box_full_train.csv` files correspondingly.
 ```
 Note: TransCAM csv file have following annotation format:
 image name | label
 ```
-4. Launch file 'transcam_train.ipynb' to train WSSS network for the plant parts segmentation task and obtain weights or download it from this repositry (WEIGHT NAME). 
-5. Launch file 'transcam_full_train.ipynb' to train WSSS network for the full plants segmentation task and obtain weights or download it from this repositry (WEIGHT NAME).
+4. Launch file `transcam_train.ipynb` to train WSSS network for the plant parts segmentation task and obtain weights or download it from this repositry (WEIGHT NAME). 
+5. Launch file `transcam_full_train.ipynb` to train WSSS network for the full plants segmentation task and obtain weights or download it from this repositry (WEIGHT NAME).
 ***
 
 ## YOLOv8 training
 1. It is requried to generate annotations in the YOLOv8 format. There are presented to files:
-   1) 'transcam_instance.ipynb' - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the 'dataset_yolo/labels/...'
-   2) 'EXP_v2_transcam_instance.ipynb' - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the 'dataset_exp_2/labels/...'
+   1) `transcam_instance.ipynb` - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the `dataset_yolo/labels/...`
+   2) `EXP_v2_transcam_instance.ipynb` - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the `dataset_exp_2/labels/...`
   - WORK_DIR
     - Conformer_small_patch16.pth
     - dataset_yolo/
     - dataset_exp_2/
     - dataet
 
-2. Create file 'data.yaml' for the plant parts in the folder 'dataset_yolo/'. File must be written in the following way:
+2. Create file `data.yaml` for the plant parts in the folder `dataset_yolo/`. File must be written in the following way:
 ```
 # train and val data
 train: '/path/to/train/images'
@@ -96,7 +96,7 @@ names:
     6: other
 ```
 
-4. Create file 'data.yaml' for the full plant in the folder 'dataset_exp_2/'. File must be written in the following way:
+4. Create file `data.yaml` for the full plant in the folder `dataset_exp_2/`. File must be written in the following way:
 ```
 # train and val data
 train: '/path/to/train/images'
@@ -116,7 +116,7 @@ names:
     6: Wild Edible Plants
     7: flower_classification
 ```
-5. Launch file yolov8.ipynb and choose the desired type of semgentation: plant parts or full plants
+5. Launch file `yolov8.ipynb` and choose the desired type of semgentation: plant parts or full plants
 6. After code execution the results can be found in the
   - WORK_DIR
     - ultralytics/ultralytics/runs/segment/prediction
