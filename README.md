@@ -1,7 +1,8 @@
 # Instructions
 ## DATASET DOWNLOAD AND PREPARATION
 1. Download dataset from [here](https://github.com/nesterus/multipart_image_augmentation.git)
-2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data into folders
+2. Clone this repo and put dataset in it.
+3. Launch file `EXP_dataset_v2.ipynb` to extract all of the data into folders
 4. After execution `EXP_dataset_v2.ipynb` in the current directory will be created following folders
    - dataset/
      - images/
@@ -51,9 +52,10 @@
 ***
 
 ## TransCAM training
-1. Download Conformer-S weights from here https://github.com/pengzhiliang/Conformer and put it to your WORK_DIR:
-  - WORK_DIR/
+1. Download Conformer-S weights from here https://github.com/pengzhiliang/Conformer and put it to:
+  - OOB_WSIS/
     - Conformer_small_patch16.pth
+    - mask2yolo/
     - dataset_yolo/
     - dataset_exp_2/
     - dataet
@@ -67,7 +69,7 @@ image name | label
 ***
 
 ## YOLOv8 training
-1. It is requried to generate annotations in the YOLOv8 format. There are presented to files:
+1. It is requried to generate annotations in the YOLOv8 format. There are presented 2 files in mask2yolo folder:
    1) `transcam_instance.ipynb` - generate annotations for plant parts. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_yolo/labels/...`
    2) `EXP_v2_transcam_instance.ipynb` - generate annotations for the full plants. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_exp_2/labels/...`
    Note: in both notebooks, it is enough to generate an annotation for the test dataset only once
