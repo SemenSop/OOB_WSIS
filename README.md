@@ -70,7 +70,8 @@ image name | label
 1. It is requried to generate annotations in the YOLOv8 format. There are presented to files:
    1) `transcam_instance.ipynb` - generate annotations for plant parts. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_yolo/labels/...`
    2) `EXP_v2_transcam_instance.ipynb` - generate annotations for the full plants. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_exp_2/labels/...`
-
+   Note: in both notebooks, it is enough to generate an annotation for the test dataset only once
+   
 2. Create file `data.yaml` for the plant parts in the folder `dataset_yolo/`. File must be written in the following way:
 ```
 # train and val data
