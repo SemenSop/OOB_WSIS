@@ -2,7 +2,7 @@
 ## DATASET DOWNLOAD AND PREPARATION
 1. Download dataset from [here](https://github.com/nesterus/multipart_image_augmentation.git)
 2. Launch file `EXP_dataset_v2.ipynb` to extract all of the data into folders
-4. After execution `EXP_dataset_v2.ipynb` in the current directory will be create following folders
+4. After execution `EXP_dataset_v2.ipynb` in the current directory will be created following folders
    - dataset/
      - images/
         - test/
@@ -68,13 +68,8 @@ image name | label
 
 ## YOLOv8 training
 1. It is requried to generate annotations in the YOLOv8 format. There are presented to files:
-   1) `transcam_instance.ipynb` - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the `dataset_yolo/labels/...`
-   2) `EXP_v2_transcam_instance.ipynb` - generate annotations for plant parts (bboxes, pseudo-labels or gt). Creates annotations in the `dataset_exp_2/labels/...`
-  - WORK_DIR
-    - Conformer_small_patch16.pth
-    - dataset_yolo/
-    - dataset_exp_2/
-    - dataet
+   1) `transcam_instance.ipynb` - generate annotations for plant parts. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_yolo/labels/...`
+   2) `EXP_v2_transcam_instance.ipynb` - generate annotations for the full plants. During the execution of the program, you will be prompted to choose type of annotations: bboxes, pseudo-labels or gt. Creates annotations in the `dataset_exp_2/labels/...`
 
 2. Create file `data.yaml` for the plant parts in the folder `dataset_yolo/`. File must be written in the following way:
 ```
@@ -116,7 +111,7 @@ names:
     6: Wild Edible Plants
     7: flower_classification
 ```
-5. Launch file `yolov8.ipynb` and choose the desired type of semgentation: plant parts or full plants
+5. Launch file `yolov8.ipynb`. During the execution of the program, you will be prompted to choose the desired type of semgentation: plant parts or full plants
 6. After code execution the results can be found in the
   - WORK_DIR
     - ultralytics/ultralytics/runs/segment/prediction
